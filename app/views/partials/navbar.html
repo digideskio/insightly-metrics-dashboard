@@ -1,0 +1,38 @@
+<div class='container-fluid'>
+<header class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavbarCtrl">
+	<div class="navbar-inner">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3" ng-click="isCollapsed = !isCollapsed">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand visible-xs" ui-sref="main"><img src="images/logo.png"></a>
+			</div>
+			<nav class="hidden-xs">
+				<ul class="nav navbar-nav">
+					<a href="#" role="button" class="navbar-brand">
+							<img src="images/logo.png"></a>
+					</a>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li ng-show="loggedIn" ng-class="{active: isActive('main')}"><a ui-sref="main" ><i class="glyphicon glyphicon-user"></i> Teams</a></li>
+					<li ng-show="loggedIn" ng-class="{active: isActive('topEarners')}"><a ui-sref="topEarners" ><i class="glyphicon glyphicon-usd"></i> Top Earners</a></li>
+					<li ng-show="loggedIn" ng-click="logout()"><a><i class="glyphicon glyphicon-flash"></i> Logout</a></li>
+					<li ng-hide="loggedIn" ng-class="{active: isActive('login')}"><a ui-sref="login" ><i class="glyphicon glyphicon-record"></i> Login</a></li>
+				</ul>
+			</nav>
+			<nav class="visible-xs">
+					<ul class="nav navbar-nav" collapse="!isCollapsed">
+					<li ng-show="loggedIn" ng-class="{active: isActive('main')}"><a ui-sref="main" > Main</a></li>
+					<li ng-show="loggedIn" ng-class="{active: isActive('topEarners')}"><a ui-sref="topEarners" >Top Earners</a></li>
+					<li ng-show="loggedIn" ng-click="logout()"><a>Logout</a></li>
+					<li ng-hide="loggedIn" ng-class="{active: isActive('login')}"><a ui-sref="login" >Login</a></li>
+					</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+<div class="header-placeholder"></div>

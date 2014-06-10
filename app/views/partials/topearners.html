@@ -1,0 +1,39 @@
+<div class="container" >
+	<div class="row">
+		<h2>Top Earning Opportunities</h2> 
+		<button ng-click="refresh()" class="btn btn-success btn-sm">Refresh</button> <small ng-show="lastRefreshed"class="pull-right">Last Refreshed: <i class="glyphicon glyphicon-calendar"></i><span style="color:green;">{{lastRefreshed}}</span></small>
+		<div class="clearfix"></div>
+	</div>
+	<div class="row">
+		</br> 
+		
+		<div class="col-md-12">	
+		<center ng-hide="dataLoaded"><i class="fa fa-spinner fa-5x fa-spin"></i></center>
+		<table ng-show="dataLoaded" ng-table="tableParamsMain" class="table table-striped table-hover">
+			<tr ng-repeat="team in $data">
+					<td data-title="'Team'" sortable="'OPPORTUNITY_FIELD_3'">
+							<i class="glyphicon glyphicon-flag"> {{team.OPPORTUNITY_FIELD_3}}</i>
+					</td>
+						<td data-title="'Value'" style="color:green;"sortable="'BID_AMOUNT'">
+						{{team.BID_AMOUNT | currency}}
+					</td>
+					<td data-title="'Probability'" sortable="'PROBABILITY'">
+							<span ng-hide="{{team.PROBABILITY}}">0</span>{{team.PROBABILITY}}%
+					</td>
+						<td data-title="'Date'" sortable="'DATE_UPDATED_UTC'">
+						<em>{{team.DATE_UPDATED_UTC | date:'dd-M-yyyy H:mm' }}</em>
+					</td>
+						<td data-title="'Profit'"  style="color:green;" sortable="'OPPORTUNITY_FIELD_5'">
+							<strong>{{team.OPPORTUNITY_FIELD_5 | currency}}</strong>
+						</td>
+			</tr>
+		</table>
+	
+		</div>
+			
+	</div>
+
+	<div class="footer">
+		© Rustco
+	</div>
+</div>
