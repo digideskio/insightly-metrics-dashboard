@@ -14,6 +14,11 @@
 					<td data-title="'Team'" sortable="'OPPORTUNITY_FIELD_3'">
 							<i class="glyphicon glyphicon-flag"> {{team.OPPORTUNITY_FIELD_3}}</i>
 					</td>
+					
+					<td data-title="'Name'"  style="color:green;" sortable="'OPPORTUNITY_NAME'">
+						<strong>{{team.OPPORTUNITY_NAME}}</strong>
+					</td>
+
 						<td data-title="'Value'" style="color:green;"sortable="'BID_AMOUNT'">
 						{{team.BID_AMOUNT | currency}}
 					</td>
@@ -23,9 +28,6 @@
 						<td data-title="'Date'" sortable="'DATE_UPDATED_UTC'">
 						<em>{{team.DATE_UPDATED_UTC | date:'dd-M-yyyy H:mm' }}</em>
 					</td>
-						<td data-title="'Profit'"  style="color:green;" sortable="'OPPORTUNITY_FIELD_5'">
-							<strong>{{team.OPPORTUNITY_FIELD_5 | currency}}</strong>
-						</td>
 			</tr>
 		</table>
 	
