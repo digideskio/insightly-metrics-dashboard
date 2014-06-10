@@ -22,7 +22,7 @@ angular.module('rustApp')
 					$state.go('main');
 					
 				},  function (err) {
-					$log.info('loggin failed');
+					$log.info(err);
 					$scope.loginFailed = true;
 					
 				});	

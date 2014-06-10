@@ -3,7 +3,7 @@
 angular.module('rustApp')
   .controller('NavbarCtrl', ['$scope', '$state', '$rootScope', '$log', 'Insightly', '$timeout',  function ($scope, $state, $rootScope, $log, Insightly, $timeout) {
 
-		$scope.logout = function(state) {
+		$scope.logout = function() {
 			$log.warn('logging out');
 			Insightly.logout();
 			$timeout(function() {

@@ -27,12 +27,13 @@ angular.module('rustApp')
 		
 		function syncData(teamData) {
 			$scope.tableParamsMain = new ngTableParams({
-				page: 1,            // show first page
-				count: 10,          // count per page
+				page: 1,
+				count: 10,
 				sorting: {
-						name: 'asc' 
+						name: 'asc'
 				}
-			}, {
+			},
+			{
 				total: teamData.length,
 				getData: function($defer, params) {
 					var orderedData = params.sorting() ?$filter('orderBy')(teamData, params.orderBy()) : teamData;
@@ -40,11 +41,11 @@ angular.module('rustApp')
 				}
 			});
 			$scope.dataLoaded = true;
-			$timeout( function() { 
+			$timeout( function() {
 				$scope.$apply();
 			},1500);
 			
-		};
+		}
 
   }]);
 

@@ -16,4 +16,4 @@ angular.module('rustApp', [
 		$rootScope.loggedIn = false;
 	}
 
-})
+});

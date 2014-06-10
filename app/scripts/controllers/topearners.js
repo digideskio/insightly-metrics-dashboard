@@ -31,24 +31,24 @@ angular.module('rustApp')
 				}
 			}
 			teamData = topEarners;
-			
-			$scope.tableParamsMain = new ngTableParams({
-				page: 1,            // show first page
-				count: 10,          // count per page
-				sorting: {
-						OPPORTUNITY_FIELD_3: 'asc' 
-				}
-			}, {
-				total: teamData.length, 
-				getData: function($defer, params) {
-					var orderedData = params.sorting() ?$filter('orderBy')(teamData, params.orderBy()) : teamData;
-					$defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-					$
-				}
+			$scope.tableParamsMain = new ngTableParams(
+				{
+					page: 1,
+					count: 10,
+					sorting: {
+						OPPORTUNITY_FIELD_3: 'asc'
+					}
+				},
+				{
+					total: teamData.length,
+					getData: function($defer, params) {
+						var orderedData = params.sorting() ?$filter('orderBy')(teamData, params.orderBy()) : teamData;
+						$defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+					}
 			});
 			$scope.dataLoaded = true;
-			$timeout( function() { 
+			$timeout( function() {
 				$scope.$apply();
 			},1500);
-		};
+		}
   }]);

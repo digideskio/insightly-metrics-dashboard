@@ -8,7 +8,7 @@ angular.module('rustApp')
 		
 		function loadData() {
 			if (cache) {
-				 callbackOnLoaded(cache); 
+				callbackOnLoaded(cache);
 			} else {
 				cacheLastUpdated = null;
 				$http({
@@ -22,8 +22,7 @@ angular.module('rustApp')
 					$log.warn(error.data);
 				});
 			}
-		};
-		
+		}
 		return {
 			
 			logout: function() {

@@ -6,17 +6,17 @@ angular.module('rustApp')
 	$stateProvider
 		.state('main',{
 			url:'/',
-			templateUrl: 'views/partials/main.html',
+			templateUrl: '/partials/main.html',
 			controller: 'MainCtrl',
 		})
 		.state('login',{
 			url:'/login',
-			templateUrl: 'views/partials/login.html',
+			templateUrl: '/partials/login.html',
 			controller: 'LoginCtrl',
 		})
 		.state('topEarners',{
 			url:'/topearners',
-			templateUrl: 'views/partials/topearners.html',
+			templateUrl: '/partials/topearners.html',
 			controller: 'TopEarnersCtrl',
 		});
 

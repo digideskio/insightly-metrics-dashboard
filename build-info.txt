@@ -1,0 +1,11 @@
+NEW BUILDS
+yo angular-fullstack:heroku
+
+PREVIOUS (UPDATE)
+
+To deploy a new build
+	grunt build
+Then enter the dist folder to commit these updates:
+	cd dist && git commit -am "describe your changes here"
+Finally, deploy your updated build to Heroku with
+	git push heroku master
